@@ -11,7 +11,7 @@ function CreateWallets() {
   const handleCreate = () => {
     setIsDownloading(true);
 
-    fetch(`http://localhost:3000/generateWallets?number=${numberOfWallets}`)
+    fetch(`${import.meta.env.VITE_BACK_URL}/generateWallets?number=${numberOfWallets}`)
       .then((response) => {
         if (response.ok) return response.blob();
         throw new Error("Network response was not ok.");
